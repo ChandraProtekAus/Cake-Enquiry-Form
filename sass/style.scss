@@ -1,0 +1,83 @@
+@import 'compass';
+
+$border-width: 10px;
+$red: #842210;
+$green: green;
+$black:#000000;
+$white: #fff;
+$silver: #999;
+
+body{
+  background: $black;
+}
+form{
+  color: $white;
+  opacity: 0.8;
+}
+div#header {
+    border: $border-width solid $green;
+}
+
+legend {
+  display: block;
+  padding-left: 2px;
+  padding-right: 2px;
+  width: 187px;
+  margin-left: 25px;
+  border-bottom: none;
+  color: $white;
+  margin-bottom: 5px;
+}
+fieldset{
+  border: 1px solid $silver !important;
+  padding: 10px;
+}
+fieldset.scheduler-border {
+  border: 1px groove #ddd !important;
+  padding: 0 1.4em 1.4em 1.4em !important;
+  margin: 0 0 1.5em 0 !important;
+  -webkit-box-shadow:  0px 0px 0px 0px $black;
+  box-shadow:  0px 0px 0px 0px $black;
+}
+.cakeForm{
+  margin: auto;
+  float: none;
+}
+
+
+legend.scheduler-border {
+  font-size: 1.2em !important;
+  font-weight: bold !important;
+  text-align: left !important;
+  width:auto;
+  padding:0 10px;
+  border-bottom:none;
+}
+textarea{
+  color:$black;
+}
+.paddingZero{
+  padding: 0;
+}
+.sub_btn{
+  background: $black;
+}
+
+.register_btn a{
+  color: $white;
+  text-decoration: underline;
+  margin-left: 20px;
+}
+.cakeForm{
+  margin: auto;
+  float: none;
+}
+input[type="text"],input[type="email"], textarea {
+  background-color : $silver;
+}
+.form-control {
+  border-radius: 0px !important;
+}
+.mb{
+  margin-bottom: 20px;
+}

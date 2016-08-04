@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Cake Enquiry Form</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-app="cakeEnquiryApp">
+<div class="container" ng-controller="cakeEnquiryCtrl as vm">
+    <div class="col-md-6 cakeForm">
+    <form class="FormCheck" name="myForm" novalidate>
+        <fieldset>
+            <legend>Cake Enquiry Form</legend>
+        <div class="col-md-12">
+            <div class="form-group f_name">
+                <label>Name:</label>
+                <input type="text" class="form-control" required name="firstName" ng-model="vm.user.firstName"
+                       ng-blur="firstName.valid = myForm.firstName.$invalid">
+		     <span style="color:red" ng-show="firstName.valid && myForm.firstName.$invalid">
+		   		<span ng-show="myForm.firstName.$error.required">Name is required.</span>
+			</span>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group f_name" ng-init="email.valid = false">
+                <label>Email:</label>
+                <input type="email" class="form-control" name="email" ng-model="vm.user.email" required
+                       ng-blur="email.valid = myForm.email.$invalid">
+                      <span style="color:red" ng-show="email.valid">
+                          <span ng-show="myForm.email.$error.required">Email is required.</span>
+                          <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+                     </span>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group f_name">
+                <label>Type Of Cake:</label>
+                 <div><input type="checkbox" name="cupCakes" ng-model="vm.user.cupCakes"> Cupcakes</div>
+                <div><input type="checkbox" name="cheeseCakes" ng-model="vm.user.cheeseCakes"> Cheesecakes</div>
+                <div><input type="checkbox" name="buttorCakes" ng-model="vm.user.buttorCakes"> Butter Cakes</div>
+                <div><input type="checkbox" name="mudCakes" ng-model="vm.user.mudCakes"> Mudcakes</div>
+            </div>
+
+        </div>
+        <div class="col-md-12">
+            <div class="form-group f_name">
+                <label>Celebration type:</label>
+                <div><input type="radio" name="celebrationType" ng-model="vm.user.celebrationType" value="birthday"> Birthday</div>
+                <div><input type="radio" name="celebrationType" ng-model="vm.user.celebrationType" value="wedding"> Wedding</div>
+                    <div> <input type="radio" name="celebrationType" ng-model="vm.user.celebrationType" value="corporate"> Corporate</div>
+                        <div><input type="radio" name="celebrationType" ng-model="vm.user.celebrationType" value="other"> Other</div>
+            </div>
+        </div>
+            <div class="col-md-12">
+            <div class="form-group col-md-12 paddingZero f_name" ng-init="otherCelebration.valid = false">
+                <input type="text" class="form-control" name="otherCelebration" ng-model="vm.user.otherCelebration" required
+                       ng-blur="otherCelebration.valid = myForm.otherCelebration.$invalid">
+                <span style="color:red" ng-show="otherCelebration.valid && myForm.otherCelebration.$invalid">
+		   		<span ng-show="myForm.otherCelebration.$error.required && vm.user.celebrationType==='other'">Others Celebration is required.</span>
+			</span>
+            </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group paddingZero f_name">
+                    <label>Tell us about your dream cake:</label>
+                    <textarea class="col-md-12 form-group f_name" ng-model="vm.user.dreamcake"></textarea>
+                </div>
+            </div>
+            <div class="col-md-12 center_btn mb">
+                <div class=" register_btn">
+                    <button class="sub_btn" type="submit" ng-click="vm.sendAway()" ng-disabled="myForm.$invalid">Send away</button>
+                    <a  href="#" class="sub_btn" type="submit" ng-click="vm.restart()">Restart</a>
+
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+    </div>
+</div>
+
+
+  <script src="js/app.js"></script>
+</body>
+</html>
